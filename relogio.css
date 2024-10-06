@@ -1,0 +1,89 @@
+* {
+    margin: 0; /* Remove a margem padrão de todos os elementos */
+    padding: 0; /* Remove o preenchimento padrão de todos os elementos */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* Define a fonte padrão */
+    box-sizing: border-box; /* Inclui padding e bordas no cálculo da largura e altura dos elementos */
+}
+
+.hero {
+    width: 100%; /* Define a largura  */
+    min-height: 100vh; /* Define a altura  */
+    background: linear-gradient(rgb(204, 15, 198), blue); /* Cria um fundo com um gradiente  */
+    color: #fff; /* Define a cor do texto */
+    position: relative; /* Permite o posicionamento absoluto de elementos filhos */
+}
+
+.container {
+    width: 800px; /* Define a largura  */
+    height: 180px; /* Define a altura  */
+    position: absolute; /* Posicionamento  */
+    top: 50%; /* Posiciona o contêiner a 50% da altura  */
+    left: 50%; /* Posiciona o contêiner a 50% da largura d */
+    transform: translate(-50%, -50%); /* centraliza */
+}
+
+.clock {
+    width: 100%; /* Define a largura do  */
+    height: 100%; /* Define a altura do  */
+    background: rgba(255, 0, 208, 0.366); /* Define um fundo semi-transparente */
+    border-radius: 20px; /* Arredonda as bordas  */
+    display: flex; /* Define o modelo de layout flexível */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    justify-content: center; /* Alinha os itens horizontalmente ao centro */
+    backdrop-filter: blur(40px); /* Aplica um efeito de desfoque  */
+}
+
+.container::before {
+    content: ''; /* Adiciona um pseudo-elemento antes do contêiner, sem conteúdo visível */
+    width: 180px; /* Define a largura do pseudo-elemento */
+    height: 180px; /* Define a altura do pseudo-elemento */
+    background: #f11c75c1; /* Define a cor de fundo do pseudo-elemento */
+    border-radius: 5px; /* Arredonda as bordas do pseudo-elemento */
+    position: absolute; /* Permite o posicionamento absoluto do pseudo-elemento */
+    top: -50px; /* Move o pseudo-elemento para cima, fora do contêiner */
+    left: -50px; /* Move o pseudo-elemento para a esquerda, fora do contêiner */
+    z-index: -1; /* Coloca o pseudo-elemento atrás de outros elementos */
+}
+
+.container::after {
+    content: ''; /* Adiciona um pseudo-elemento depois do contêiner, sem conteúdo visível */
+    width: 180px; /* Define a largura do pseudo-elemento */
+    height: 180px; /* Define a altura do pseudo-elemento */
+    background: #1c7ff1ec; /* Define a cor de fundo do pseudo-elemento */
+    border-radius: 50%; /* Arredonda as bordas do pseudo-elemento, tornando-o um círculo */
+    position: absolute; /* Permite o posicionamento absoluto do pseudo-elemento */
+    right: -30px; /* Move o pseudo-elemento para a direita, fora do contêiner */
+    bottom: -50px; /* Move o pseudo-elemento para baixo, fora do contêiner */
+    z-index: -1; /* Coloca o pseudo-elemento atrás de outros elementos */
+}
+
+.clock span {
+    font-size: 80px; /* Define o tamanho da fonte dos números do relógio */
+    width: 110px; /* Define a largura dos elementos span */
+    display: inline-block; /* Permite que os elementos span se comportem  em linha */
+    text-align: center; /* Centraliza o texto dentro dos elementos span */
+    position: relative; /* Permite que o posicionamento absoluto dos pseudo-elementos funcione em relação a este elemento */
+}
+
+.clock span::after {
+    font-size: 16px; /* Define o tamanho da fonte para (HORA, MINUTOS, SEGUNDOS) */
+    position: absolute; /* Permite o posicionamento absoluto do rótulo  */
+    bottom: -25px; /* Move o rótulo para baixo  */
+    left: 50%; /* Posiciona o rótulo a 50% */
+    transform: translateX(-50%); /* Centraliza o rótulo horizontalmente */
+    text-align: center; /* Centraliza o texto do rótulo */
+}
+
+#hrs::after {
+    content: 'HORA'; /* Adiciona o  "HORA" após o elemento com ID "hrs" */
+}
+
+#min::after {
+    content: 'MINUTOS'; /* Adiciona o "MINUTOS" após o elemento com ID "min" */
+}
+
+#seg::after {
+    content: 'SEGUNDOS'; /* Adiciona o "SEGUNDOS" após o elemento com ID "seg" */
+}
+
+
